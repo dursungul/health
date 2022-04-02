@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled2/widgets/input_Text.dart';
+import 'package:untitled2/pages/bmi_ilk_code.dart';
 
 class VkiHesapla extends StatefulWidget {
   const VkiHesapla({Key? key}) : super(key: key);
@@ -10,6 +10,9 @@ class VkiHesapla extends StatefulWidget {
 }
 
 class _VkiHesaplaState extends State<VkiHesapla> {
+  TextEditingController kiloController = new TextEditingController();
+  TextEditingController boyController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,17 +24,17 @@ class _VkiHesaplaState extends State<VkiHesapla> {
         Row(
           //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Inputwidget(text: "Cinsiyet"),
-            Inputwidget(text: "Doğum Tarihi")
+            inputAlan("KİLO", kiloController),
+            inputAlan("BOY", boyController)
           ],
         ),
         SizedBox(
           height: 10,
         ),
         Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Inputwidget(text: "Height"), Inputwidget(text: "Weight")],
-        ),
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //children: [Inputwidget(text: "Height"), Inputwidget(text: "Weight")],
+            ),
         SizedBox(
           height: 30,
         ),
