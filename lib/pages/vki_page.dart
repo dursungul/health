@@ -26,7 +26,7 @@ class _VkiHesaplaState extends State<VkiHesapla> {
           ],
         ),
         SizedBox(
-          height: 30,
+          height: 10,
         ),
         Row(
           //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
