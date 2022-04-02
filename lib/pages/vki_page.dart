@@ -16,7 +16,7 @@ class _VkiHesaplaState extends State<VkiHesapla> {
       children: [
         Text("Profile"),
         SizedBox(
-          height: 50,
+          height: 10,
         ),
         Row(
           //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
