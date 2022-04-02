@@ -14,7 +14,7 @@ class _VkiHesaplaState extends State<VkiHesapla> {
   TextEditingController boyController = new TextEditingController();
   TextEditingController yasController = new TextEditingController();
   TextEditingController cinsController = new TextEditingController();
-
+  TextEditingController popController = new TextEditingController();
   int sayi = 5;
   double kilo = 0;
   double boy = 0;
@@ -31,8 +31,28 @@ class _VkiHesaplaState extends State<VkiHesapla> {
       cins = cinsController.value.text;
       vki = Kiloindexhesapla(boy, kilo);
       kiloclass = KiloClassBul(vki);
+      String name = "";
       print("kilo: " + kilo.toString());
     });
+  }
+
+  Future<String?> openDialog() => showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text("Kilo"),
+            content: TextField(
+              controller: popController,
+              onSubmitted: (_) => submit(),
+              autofocus: true,
+              decoration: InputDecoration(hintText: "Kilo"),
+            ),
+            actions: [
+              TextButton(child: Text("Ok"), onPressed: submit),
+            ],
+          ));
+
+  void submit() {
+    Navigator.of(context).pop(popController.text);
   }
 
   @override
@@ -75,13 +95,17 @@ class _VkiHesaplaState extends State<VkiHesapla> {
           onPressed: () {
             Hesapla();
           },
+          child: Text('Vücut Kitle Endek Hesapla'),
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            final name = await openDialog();
+            Hesapla();
+            print("name : " + "$name");
+          },
           child: Text('Looks like a RaisedButton'),
         )
       ],
     );
   }
-}
-
-int Numberop(int num) {
-  return num * 2;
 }
