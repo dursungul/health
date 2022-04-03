@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled2/pages/cupertino_picker.dart';
 import 'package:untitled2/pages/vki_page.dart';
 
 void main() {
@@ -35,10 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    CupertinoPickerWidget(),
     Text(
       'Index 1: Business',
       style: optionStyle,
